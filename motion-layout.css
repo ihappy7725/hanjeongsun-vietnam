@@ -1,0 +1,52 @@
+/* Smooth transitions without changing the browser's native scrolling. */
+:root{--motion-ease:cubic-bezier(.22,.68,.2,1)}
+.reveal{translate:0 24px;transition:opacity 1.25s var(--motion-ease),translate 1.25s var(--motion-ease)}
+.news-card img{transition:scale 1.15s var(--motion-ease)}
+.news-card:hover img{scale:1.025}
+.product-visual img{transition:opacity .85s var(--motion-ease);transform:none!important}
+.product-visual img.fade-in{animation:softImageIn .9s var(--motion-ease) both}
+.product-visual .outgoing-product{animation:softImageOut .9s var(--motion-ease) forwards}
+.product-visual .outgoing-product.concept-image{inset:0;margin:auto;transform:none!important}
+.product-visual{width:340px;max-width:65%;cursor:default;padding:0}
+.product-visual img{width:100%;height:340px;object-fit:contain;mix-blend-mode:multiply}
+.product-visual img.concept-image{width:390px;height:390px;max-width:100%;margin:auto}
+.product-visual img.original-image{width:320px;height:320px;max-width:100%;margin:auto}
+.product-stage{height:390px}
+.product-copy h3{font-size:32px}
+.product-copy .eyebrow{font-size:9px;opacity:.7;margin-bottom:12px}
+.shop-explorer img{transition:opacity .9s var(--motion-ease)}
+.shop-explorer img.fade-in{animation:softImageIn .9s var(--motion-ease) both}
+.shop-tabs button,.collection-tabs button{transition:background .55s var(--motion-ease),color .55s var(--motion-ease)}
+.intro{transition:opacity 1s var(--motion-ease),visibility 1s}
+.gifting .section-heading{margin-bottom:45px}
+.gift-editorial{max-width:1500px;margin:auto}
+.gift-wide{margin:0}
+.gift-wide img{aspect-ratio:1.82;object-fit:cover}
+.gift-wide figcaption{font-size:11px;line-height:1.8;color:var(--muted);padding-top:18px}
+.gift-second{display:grid;grid-template-columns:1fr 1.45fr;gap:8%;align-items:center;margin-top:75px}
+.gift-note h3{font-size:clamp(27px,3.3vw,45px);line-height:1.4}
+.gift-note>p{font-size:12px;line-height:2;color:var(--muted);margin-top:25px}
+.gift-second figure{margin:0}
+.gift-second img{aspect-ratio:1.25;object-fit:cover;object-position:center}
+@keyframes softImageIn{from{opacity:0}to{opacity:1}}
+@keyframes softImageOut{from{opacity:1}to{opacity:0}}
+@media(max-width:650px){
+ .product-visual{width:290px;max-width:78%}
+ .product-visual img{height:280px}
+ .product-visual img.original-image{width:275px;height:275px}
+ .product-visual img.concept-image{width:290px;height:290px}
+ .product-stage{height:310px}
+ .product-copy h3{font-size:28px}
+ .gift-wide img{aspect-ratio:1.3;object-position:50%}
+ .gift-wide figcaption{font-size:10px;padding-top:14px}
+ .gift-second{grid-template-columns:1fr;gap:27px;margin-top:45px}
+ .gift-note h3{font-size:29px}
+ .gift-note>p{font-size:11px;margin-top:18px}
+ .gift-second img{aspect-ratio:1.4}
+}
+@media(prefers-reduced-motion:reduce){
+ .reveal{opacity:1;translate:none;transition:none}
+ .collage-photo{opacity:1!important;filter:none!important;transform:none!important;clip-path:none!important;will-change:auto}
+ .product-visual img,.shop-explorer img{animation:none!important;transition:none!important}
+ .product-visual .outgoing-product{display:none}
+}

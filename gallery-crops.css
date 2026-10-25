@@ -1,0 +1,8 @@
+/* Measured page margins only; preserve the photo and its visible ratio. */
+.collage-photo img{position:absolute;inset:auto;left:0;top:0;max-width:none;aspect-ratio:auto;object-fit:fill}
+.photo-2{aspect-ratio:1395/980}
+.photo-2 img{width:100.358423%;height:100.000000%;left:-0.358423%;top:0.000000%}
+.photo-10{aspect-ratio:1373/980}
+.photo-10 img{width:101.966497%;height:100.000000%;left:-0.946832%;top:0.000000%}
+.photo-11{aspect-ratio:1373/980}
+.photo-11 img{width:101.966497%;height:100.000000%;left:-0.946832%;top:0.000000%}

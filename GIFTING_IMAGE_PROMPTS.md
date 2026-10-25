@@ -1,0 +1,16 @@
+# 다낭 선물 에디션 이미지 생성 기록
+
+내장 이미지 생성 도구로 새 이미지 2장을 생성합니다. 제공된 패키지 이미지는 브랜드 소재·구도의 참고로 사용하며, 실제 촬영 기록이 아닌 디자인 콘셉트 이미지로 내부 관리합니다. 최종 웹 파일은 `assets/gifting/`, 생성 PNG 원본은 `assets/gifting/source/`에 보관합니다.
+
+## 1. danang-gift-box-v1
+
+```text
+Use case: product-mockup. Create a NEW premium HANJUNGSUN Da Nang edition gift-packaging editorial photograph. Reference image is a brand packaging design and material reference, not an edit target. Single horizontal 3:2 image, full bleed with no page margins or border. On a pale natural limestone tabletop, one open refined rectangular six-compartment gift box in the lower left, containing exactly six individual round rice cakes wrapped in delicate fibrous HANJI paper, gathered upward and tied with fine natural twine, in mango gold, lychee rose, pale jade, ivory, dragonfruit pink and muted yellow-green. Behind it on the right, the matching upright lid: elegant Korean traditional landscape illustration of Da Nang Han River and the distinctive golden curved Dragon Bridge, lotus leaves and misty distant mountains, rendered like a restrained Korean minhwa painting on warm ivory paper. Clear accurate small brand mark on the lid only: 韓貞仙 and beneath it HANJUNGSUN, with a small ĐÀ NẴNG beneath. Avoid any other writing. Composition airy and sculptural, show full box and full lid with generous margins, products occupy central 75 percent, plenty of quiet ivory space around. No cooler bag, no cloth-wrapped parcel, no loose fruit or tea cups, no large decorative flowers, no plates, no extra boxes. Soft tropical morning light filtered through a single distant palm outside the frame, delicate leaf shadow on the tabletop. Calm high-end tactile packaging photography, ivory and celadon with restrained mango-gold accents. Realistic hanji fibers and matte paper, not shiny plastic, no collage, no extra captions or watermarks.
+```
+
+## 2. danang-bojagi-v1
+
+```text
+Use case: product-mockup. Create a NEW premium HANJUNGSUN Da Nang edition Korean bojagi gift-wrapping editorial photograph. Reference image is a packaging and brand-material reference, not an edit target. Single horizontal 3:2 photo, full bleed without white borders or page layout. Exactly one rectangular gift parcel wrapped in elegant double-sided silk BOJAGI: muted jade-green silk on the visible front and warm pale-gold silk showing through a generous traditional knot at the top. A single fine antique-gold cord with small lotus-shaped pendant and short ivory tassel hangs neatly from the knot, very restrained. The covered box shape and fabric folds should look refined and real. Parcel is in the center, occupies central 65 percent of image, fully inside frame. Beside it at the lower right, one small flat ivory landscape gift card with an understated blue-green ink image of Da Nang Dragon Bridge over the Han River, with a tiny accurate 韓貞仙 mark only. On pale textured stone near a shaded veranda, softly blurred bamboo shade behind and subtle fresh tropical air, no tourist souvenir clutter. Soft side daylight shows silk weave, sage/jade/ivory/warm gold palette. No rice cakes, no open box, no raw fruit, no teapot, no people, no cooler bag, no multiple wrapped parcels, no large lettering, no added graphic captions, no watermark, no collage.
+```
+

@@ -1,0 +1,48 @@
+html[data-wheel-settling]{scroll-behavior:auto!important}
+/* Every source is 10:7. Preserve the photograph rather than filling a portrait crop. */
+.story-gallery{height:200vh;min-height:max(1260px,92vw)}
+.collage-photo{height:auto!important;aspect-ratio:10/7;transform:perspective(1000px) translate3d(var(--drift-x,-24px),var(--drift-y,-24px),0) rotate(var(--tilt,-1deg)) scale(var(--frame-scale,.965));transform-origin:0 0;backface-visibility:hidden;isolation:isolate}
+.collage-photo img{height:100%;width:100%;aspect-ratio:10/7;object-fit:contain;object-position:center;scale:1!important}
+.collage-photo:after{content:'';position:absolute;inset:-50%;background:linear-gradient(135deg,transparent 33%,#fff8 49%,transparent 65%);transform:translate3d(var(--glint,-50%),var(--glint,-50%),0);opacity:var(--glint-opacity,0);pointer-events:none;mix-blend-mode:screen}
+.photo-1{left:3%;top:5%;width:27%}
+.photo-2{left:32%;top:0%;width:10%}
+.photo-3{right:5%;top:3%;width:24%}
+.photo-4{right:2%;top:24%;width:18%}
+.photo-5{left:8%;top:30%;width:24%}
+.photo-6{right:29%;top:41%;width:12%}
+.photo-7{left:2%;top:53%;width:27%}
+.photo-8{left:32%;top:66%;width:10%}
+.photo-9{right:6%;top:62%;width:24%}
+.photo-10{left:7%;top:80%;width:23%}
+.photo-11{right:31%;top:77%;width:10%}
+.photo-12{right:2%;top:85%;width:19%}
+.vietnam-map .map-outline,.world-map .map-outline{stroke:#f6f5edd9;stroke-width:1.8;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0}
+.vision .dark-content{padding-top:40px;padding-bottom:75px}
+.world-map{margin-top:0}
+.vision-bottom{padding-top:15px}
+.vietnam-map>p{margin:0}
+.journal-page .article-navigation{margin-top:45px}
+@media(max-width:1000px){.story-gallery{height:185vh;min-height:1200px}}
+@media(max-width:650px){
+ .story-gallery{height:145svh;min-height:1000px}
+ .photo-1{left:0;top:6%;width:33%}
+ .photo-2{left:29%;top:0%;width:13%}
+ .photo-3{right:0;top:2%;width:31%}
+ .photo-4{right:2%;top:22%;width:26%}
+ .photo-5{left:3%;top:29%;width:31%}
+ .photo-6{right:29%;top:39%;width:13%}
+ .photo-7{left:0;top:52%;width:33%}
+ .photo-8{left:29%;top:64%;width:13%}
+ .photo-9{right:0;top:60%;width:30%}
+ .photo-10{left:3%;top:80%;width:31%}
+ .photo-11{right:30%;top:77%;width:12%}
+ .photo-12{right:0;top:87%;width:26%}
+ .vision .dark-content{padding-top:20px;padding-bottom:55px}
+ .vietnam-map{height:375px}
+ .world-map .map-outline,.vietnam-map .map-outline{stroke-width:1.55}
+}
+@media(prefers-reduced-motion:reduce){
+ html[data-wheel-settling]{scroll-behavior:auto}
+ .collage-photo{transform:none!important;opacity:1!important;clip-path:none!important;filter:none!important}
+ .collage-photo:after{display:none}
+}

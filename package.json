@@ -1,0 +1,6 @@
+{
+  "name": "hanjungsun-vietnam", "version": "1.0.0", "private": true,
+  "type": "module",
+  "scripts": {"dev": "node scripts/serve.mjs", "start": "node scripts/serve.mjs", "build": "node scripts/build.mjs", "check": "node --check app.js && node --check journal.js && node --check smooth-scroll.js && node scripts/check.mjs && node scripts/check-journal.mjs && node scripts/check-scroll.mjs"},
+  "devDependencies": {"linkedom": "^0.18.12"}
+}

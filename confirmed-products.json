@@ -1,0 +1,30 @@
+[
+  {
+    "id":"mangosteen-yogurt","category":"vietnam",
+    "image":"collection/mangosteen-yogurt-pair-v2","thumbnail":"collection/mangosteen-yogurt-thumb-v2",
+    "name":{"vi":"Bánh gạo măng cụt","ko":"망고스틴 찹쌀떡","en":"Mangosteen rice cake"},
+    "composition":"confirmed-product-photo-20261025",
+    "ingredients":"Segmented white mangosteen flesh, ivory yogurt layer and white glutinous rice shell exactly as the approved cut photograph. Deep purple hanji wrapping with the approved raffia tie and Vietnamese fruit tag."
+  },
+  {
+    "id":"mango-yogurt","category":"vietnam",
+    "image":"collection/mango-yogurt-pair-v2","thumbnail":"collection/mango-yogurt-thumb-v2",
+    "name":{"vi":"Bánh gạo xoài và sữa chua","ko":"망고 요거트 찹쌀떡","en":"Mango yogurt rice cake"},
+    "composition":"confirmed-product-photo-20261025",
+    "ingredients":"One rectangular golden mango block, thick white yogurt layer and white glutinous rice shell exactly as the approved cut photograph. Golden yellow hanji wrapping and the approved Vietnamese mango tag. No mango jam."
+  },
+  {
+    "id":"honey-red-dragonfruit","category":"vietnam",
+    "image":"collection/honey-red-dragonfruit-pair-v2","thumbnail":"collection/honey-red-dragonfruit-thumb-v2",
+    "name":{"vi":"Bánh gạo thanh long đỏ mật ong","ko":"꿀 레드용과 찹쌀떡","en":"Honey red dragon fruit rice cake"},
+    "composition":"confirmed-product-photo-20261025",
+    "ingredients":"One red dragonfruit center with tiny black seeds, a translucent amber honey ring and white glutinous rice shell exactly as the approved cut photograph. Fuchsia hanji with the approved green-tipped bracts and Vietnamese tag. No yogurt or invented jam."
+  },
+  {
+    "id":"durian","category":"vietnam",
+    "image":"collection/durian-pair-v2","thumbnail":"collection/durian-thumb-v2",
+    "name":{"vi":"Bánh gạo sầu riêng","ko":"두리안 찹쌀떡","en":"Durian rice cake"},
+    "composition":"confirmed-product-photo-20261025",
+    "ingredients":"Pale creamy-yellow naturally fibrous durian filling inside a white glutinous rice shell exactly as the approved cut photograph. Pale buttery ivory-yellow hanji and approved Vietnamese durian tag. No invented jam halo."
+  }
+]

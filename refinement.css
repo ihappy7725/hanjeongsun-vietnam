@@ -1,0 +1,131 @@
+/* Quiet, tropical editorial direction. Dividers are replaced by spacing. */
+:root{--ivory:#f6f5ed;--beige:#e9eadd;--muted:#737360;--leaf:#426456;--gold:#a19165}
+body{overflow-x:clip}
+p,h2,h3,a,button,dd{word-break:normal;overflow-wrap:break-word;text-wrap:pretty}
+html[lang=ko] p,html[lang=ko] h2,html[lang=ko] h3,html[lang=ko] a,html[lang=ko] button,html[lang=ko] dd{word-break:keep-all}
+h2,h3{text-wrap:balance}
+.sentence{display:block}
+.site-header{height:92px;border:0;background:var(--ivory)}
+.hero{padding-top:0}
+.hero h1{margin:0 0 22px}
+.hero-caption p{margin-bottom:0}
+.section-prelude{padding:105px 5% 65px;max-width:850px}
+.section-prelude>p:last-child{max-width:740px;font-size:13px;line-height:2.1}
+.site-header nav a:hover,.text-link:hover,.footer-links a:hover{color:var(--leaf)}
+.site-header nav a:after,.text-link:after{display:none}
+.text-link{border:0}
+.section-space{padding-top:95px;padding-bottom:95px}
+
+/* Twelve full-photo layers share a compact canvas; the logo stays in the center. */
+.story-gallery{position:relative;padding:0;width:100%;height:190vh;min-height:1250px;isolation:isolate}
+.sticky-brand{position:sticky;top:32vh;left:calc(50% - 39px);height:250px;width:78px;margin-bottom:-250px;z-index:6;filter:none;text-align:center;pointer-events:none}
+.sticky-brand>span{display:inline-block;font:50px/1.5 serif;letter-spacing:.12em;writing-mode:vertical-rl;color:var(--leaf);text-shadow:0 0 22px var(--ivory),0 0 12px var(--ivory)}
+.sticky-brand small{font-size:6px;letter-spacing:.15em;margin-top:20px;color:var(--leaf)}
+.collage{position:absolute;inset:0}
+.collage-photo{position:absolute;margin:0;overflow:hidden;opacity:var(--clarity,.06);filter:blur(var(--softness,1.6px));clip-path:var(--diagonal-mask,polygon(0 0,0 0,0 0,0 0,0 0));transform:translate3d(var(--drift-x,-22px),var(--drift-y,-22px),0);will-change:transform,opacity,clip-path;z-index:1}
+.collage-photo img{height:100%;width:100%;object-fit:cover;object-position:center;scale:var(--photo-scale,1.025)}
+.photo-1{left:0;top:9%;width:34%;height:20%;z-index:2}
+.photo-2{left:27%;top:0;width:14%;height:13%;z-index:3}
+.photo-3{right:9%;top:0;width:24%;height:28%}
+.photo-4{right:0;top:27%;width:25%;height:16%;z-index:3}
+.photo-5{left:10%;top:34%;width:27%;height:19%}
+.photo-6{right:27%;top:35%;width:15%;height:16%;z-index:4}
+.photo-7{left:0;top:55%;width:34%;height:21%}
+.photo-8{left:26%;top:55%;width:15%;height:14%;z-index:3}
+.photo-9{right:5%;top:54%;width:27%;height:25%}
+.photo-10{left:8%;top:81%;width:31%;height:18%;z-index:2}
+.photo-11{right:28%;top:80%;width:14%;height:15%;z-index:3}
+.photo-12{right:0;top:83%;width:23%;height:16%}
+.story-ending{padding:55px 9% 95px;display:flex;justify-content:flex-end}
+.story-ending .gallery-end{width:41%;padding:0;max-width:510px}
+.gallery-end h3{font-size:35px}
+.gallery-end>p:not(.eyebrow){font-size:12px;line-height:2;max-width:460px}
+.news{background:#eaf0e5}
+.news h2{font-size:48px}
+.news-card .eyebrow{letter-spacing:.02em;font-size:10px}
+.carousel-arrows button,.product-arrow{border:0;background:#4264560c;color:var(--leaf)}
+.carousel-arrows button:hover,.product-arrow:hover{background:#4264561a}
+.collection{background:radial-gradient(ellipse at 50% 48%,#dee9d64d,transparent 58%)}
+.collection-heading h2{font-size:clamp(35px,4.3vw,62px);color:var(--leaf)}
+.collection-tabs{gap:14px;margin-top:36px;border:0}
+.collection-tabs button{padding:10px 22px;border:0;border-radius:30px}
+.collection-tabs button[aria-selected=true]{background:#42645610;color:var(--leaf)}
+.product-visual img.concept-image{border-radius:0;object-fit:contain;width:390px;height:390px;max-width:100%;margin:auto}
+.product-stage{height:440px}
+.product-visual img{max-height:400px}
+.product-copy h3{color:var(--leaf)}
+.product-copy>p:not(.eyebrow){text-wrap:balance}
+.product-copy .eyebrow{letter-spacing:.05em;font-size:9px}
+.gifting{padding-top:55px}
+.gift-controls{border:0}
+.shops .dark-overlay{background:linear-gradient(90deg,#14261eea,#1d3027d9)}
+.vision .dark-overlay{background:#18281fe8}
+.dark-section .eyebrow{letter-spacing:.04em}
+.shop-tabs{gap:10px;border:0}
+.shop-tabs button{border:0;border-radius:2px;padding:12px 14px;background:#ffffff08}
+.shop-tabs button[aria-selected=true]{background:#ffffff18;color:#fff}
+.shop-tabs button>span{display:inline;margin-left:8px}
+.vietnam-map{padding:0 20px}
+.vietnam-map svg{max-height:540px}
+.vietnam-map .map-outline{stroke:#f6f5edd9;fill:#f6f5ed05;stroke-width:1.1;stroke-dasharray:none;stroke-dashoffset:0}
+.danang-marker .pulse{transform-origin:221px 254px}
+.store-info{display:grid;gap:8px;margin:24px 0 0;font-size:10px;line-height:1.8}
+.store-info>div{display:grid;grid-template-columns:85px 1fr;gap:10px}
+.store-info dt{color:#d5ddc1}
+.store-info dd{margin:0;color:#f7f3ebbb}
+.store-copy #store-features{flex-wrap:wrap;gap:8px 16px}
+.vision-bottom,.footer-links,.footer-bottom{border:0}
+.world-marker.future>span[data-t]{width:auto;height:auto;border:0;border-radius:0;background:none;font:inherit;box-shadow:none}
+.footer-links p{letter-spacing:.03em;font-size:11px}
+
+@media(max-width:1000px){
+ .story-gallery{height:175vh;min-height:1150px}
+ .section-space{padding-top:75px;padding-bottom:75px}
+ .section-prelude{padding-top:85px}
+ .gallery-end h3{font-size:30px}
+}
+@media(max-width:650px){
+ .site-header{height:78px}
+ .hero h1{margin:15px 0 20px}
+ .section-prelude{padding:75px 6% 45px}
+ .section-prelude h2{font-size:33px}
+ .section-prelude>p:last-child{font-size:11px;line-height:2;margin-top:25px}
+ .section-prelude .sentence+ .sentence{margin-top:4px}
+ .story-gallery{height:145svh;min-height:1000px}
+ .sticky-brand{left:calc(50% - 25px);top:34vh;height:195px;margin-bottom:-195px;width:50px}
+ .sticky-brand>span{font-size:34px}
+ .sticky-brand small{font-size:4px;margin-top:14px}
+ .photo-1{width:38%;height:17%;top:9%}
+ .photo-2{left:24%;width:18%;height:11%;top:0}
+ .photo-3{right:0;width:37%;height:24%}
+ .photo-4{right:0;width:27%;top:28%;height:13%}
+ .photo-5{left:4%;width:38%;top:33%;height:17%}
+ .photo-6{right:23%;width:20%;top:41%;height:12%}
+ .photo-7{left:0;top:56%;width:39%;height:19%}
+ .photo-8{left:23%;top:56%;width:20%;height:10%}
+ .photo-9{right:0;top:59%;width:33%;height:17%}
+ .photo-10{left:4%;top:83%;width:38%;height:16%}
+ .photo-11{right:22%;top:79%;width:20%;height:12%}
+ .photo-12{right:0;top:90%;width:27%;height:10%}
+ .story-ending{padding:45px 6% 65px}
+ .story-ending .gallery-end{width:79%;max-width:400px}
+ .gallery-end h3{font-size:28px}
+ .gallery-end>p:not(.eyebrow){font-size:11px;line-height:2}
+ .gallery-end .text-link{font-size:10px}
+ .news h2{font-size:35px}
+ .collection-tabs{gap:4px}
+ .collection-tabs button{font-size:9px;padding:9px 12px}
+ .product-stage{height:310px}
+ .product-visual img.concept-image{width:280px;height:280px}
+ .store-info{font-size:10px}
+ .store-info>div{grid-template-columns:65px 1fr;gap:8px}
+ .vietnam-map{height:410px;padding:0 15%}
+ .vietnam-map svg{height:370px}
+ .shops h2{font-size:40px}
+ .vision-heading h2{font-size:39px}
+ .footer-links p{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .collage-photo{opacity:1!important;filter:none!important;transform:none!important;clip-path:none!important;will-change:auto}
+ .collage-photo img{scale:1}
+}
