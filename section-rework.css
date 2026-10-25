@@ -209,3 +209,7 @@ html{scroll-padding-top:clamp(58px,5.2vw,74px)}
  .site-header.over-hero{min-height:72px;padding-top:12px;padding-bottom:8px}
  .site-header.over-hero.lifted{min-height:48px}
 }
+
+/* Arrow glyphs are drawn, not written: browser auto-translation rewrote "←" as a word. */
+.arrow-glyph{width:38%;height:38%;margin:auto;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.carousel-arrows button,.product-arrow{display:flex;align-items:center;justify-content:center;padding:0;line-height:0}
