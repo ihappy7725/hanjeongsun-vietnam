@@ -17,7 +17,7 @@ const body=String.raw`
    for(const key of ['width','height','x','font']){assert.equal(after.header[key],before.header[key],'Header unchanged '+key);assert.equal(after.logo[key],before.logo[key],'Header logo unchanged '+key);checks+=2;}
    assert.equal(after.mainZoom,'0.85');checks++;
    for(const name of ['gallery','product','gift','brand','contact']){const ratio=after[name].width/before[name].width;assert.ok(ratio>=.80&&ratio<=.86,name+' shrinks to 80–85% at '+width+' / '+lang+': '+ratio);checks++;}
-   assert.ok(Math.abs(after.photo.width/before.photo.width-.85)<.01);assert.ok(Math.abs(after.photo.height/before.photo.height-.85)<.01);checks+=2;
+   assert.ok(Math.abs(after.photo.width-before.photo.width)<2,'Opening photograph keeps its original full width');assert.ok(Math.abs(after.photo.height-before.photo.height)<2,'Opening photograph keeps its original full height');checks+=2;
    assert.ok(Math.abs(after.frame.height-before.frame.height)<2,'Hero background keeps its screen height');checks++;
    assert.ok(await evaluate('document.documentElement.scrollWidth<=innerWidth'),'No horizontal overflow');checks++;
    if(lang==='ko'&&width!==320){

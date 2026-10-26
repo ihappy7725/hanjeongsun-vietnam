@@ -17,7 +17,7 @@ const body=String.raw`
    await until("document.querySelector('.hero-photo>img').complete&&document.querySelector('.hero-photo>img').naturalWidth>0");
    const hero=await evaluate("(()=>{const i=document.querySelector('.hero-photo>img'),f=document.querySelector('.hero-photo').getBoundingClientRect();return {src:i.getAttribute('src'),full:f.height,screen:innerHeight,fit:getComputedStyle(i).objectFit,horizontalFraction:Math.min(1,f.width/(Math.max(f.width/i.naturalWidth,f.height/i.naturalHeight)*i.naturalWidth))}})()");
    assert.equal(hero.src,'assets/vietnam-four-hero-v3.webp');assert.ok(hero.horizontalFraction>.97,'All four hero cake columns stay in frame');checks+=2;
-   assert.ok(hero.full>=hero.screen*.94,'Hero background fills the first screen while the photograph is inset');checks++;
+   assert.ok(hero.full>=hero.screen*.94,'Opening photograph fills the first screen');checks++;
    if(width<=1000)assert.equal(hero.fit,'contain');checks++;
    await evaluate("document.querySelector('#home').scrollIntoView({behavior:'instant',block:'start'});new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))");
    const homeBox=await evaluate("(()=>{const r=document.querySelector('#home').getBoundingClientRect();return {x:0,y:scrollY+r.top,width:innerWidth,height:Math.ceil(r.height),scale:1}})()");

@@ -12,9 +12,9 @@ main .shops .dark-content{width:85%;margin-inline:auto}
 main .contact-heading,main .contact-tabs,main .contact-panel{width:85%;margin-inline:auto}
 .footer-top,.footer-links,.footer-bottom{width:85%;margin-inline:auto}
 
-/* Keep the first chapter full-height; inset only its photograph, not the header. */
+/* The opening photograph stays full-screen, outside the 85% content treatment. */
 .hero-photo{height:calc(100svh / var(--content-scale))}
-.hero-photo>img{position:absolute;left:7.5%;top:7.5%;width:85%;height:85%;object-fit:cover;object-position:center 58%}
+.hero-photo>img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:center 58%}
 @media(max-width:1000px){.hero-photo>img{object-fit:contain;object-position:center}}
 .journal-page .article-hero{max-width:min(1320px,88vw)}
 .journal-page .article-heading,.journal-page .article-body,.journal-page .article-navigation{width:85%}
