@@ -1,5 +1,9 @@
 # 에셋 및 출처 관리
 
+## 벤송점 벽면 마크 교정 — 2026-10-26
+
+현재 매장 사진과 `assets/heritage.webp`의 브랜드 로고를 참조해 내장 이미지 생성 도구로 v6 이미지를 제작했습니다. 크고 진한 간판 대신 작고 벽과 톤이 가까운 마크를 유지합니다. 최종은 기존 `assets/store-tourist.webp`(1376×768px, quality 90), 원본은 `assets/source/store-tourist-v6.png`입니다. 생성 이미지는 실제 매장 촬영 자료와 구분해 관리하며 기존 가상 매장 설정은 유지합니다. 정확한 프롬프트는 `BENSONG_IMAGE_REVISION_20261026.md`, 재처리는 `scripts/prepare_bensong_v6.py`입니다.
+
 ## 2026-10-26 홈·한국 제품 이미지 통일
 
 내장 이미지 생성 도구로 홈 `assets/vietnam-four-hero-v3.webp` 1장과 한국 `assets/collection/*-pair-v3.webp` 6장을 제작했습니다. 기존 한국 제품의 속·색을 유지하고 베트남 승인 제품을 태그·크기·배치 기준으로 삼았습니다. 입력 사진과 최종 프롬프트는 `image-plan-20261026.json`, `IMAGE_PROMPTS_20261026.md`, 선택 결과는 `image-selected-20261026.json`입니다. PNG 원본은 `assets/collection/source/`, 재처리는 `scripts/prepare_images_20261026.py`입니다. 생성 컷은 실제 촬영 원본과 구분합니다. 기존 이미지 파일은 이력으로 보관합니다.

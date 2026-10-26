@@ -1,4 +1,16 @@
 /* Readable editorial rhythm, a jade seal, and a closing space for conversation. */
+/* Only the moving thumb overlays the page: no reserved gutter, track, or arrows. */
+html[data-overlay-scrollbar]{scrollbar-width:none;scrollbar-gutter:auto}
+html[data-overlay-scrollbar]::-webkit-scrollbar{display:none;width:0;height:0}
+.page-scrollbar{position:fixed;top:12px;right:3px;bottom:12px;width:20px;z-index:10000;background:transparent;pointer-events:none}
+.page-scrollbar[hidden]{display:none}
+.page-scrollbar-thumb{position:absolute;top:0;left:0;width:20px;min-height:48px;background:transparent;pointer-events:auto;touch-action:none;cursor:grab;user-select:none}
+.page-scrollbar-thumb:before{content:'';position:absolute;inset:0 8px;border-radius:8px;background:linear-gradient(180deg,#b49a70e6,#647f6eef 48%,#365c4eef);box-shadow:0 0 0 1px #faf6ee40;transition:inset .25s ease,box-shadow .25s ease}
+.page-scrollbar-thumb:hover:before,.page-scrollbar-thumb:focus-visible:before,.page-scrollbar.dragging .page-scrollbar-thumb:before{inset:0 6px;box-shadow:0 0 0 1px #faf6ee80,0 1px 6px #152d2520}
+.page-scrollbar-thumb:focus-visible{outline:1px solid #9c8359;outline-offset:1px;border-radius:8px}
+.page-scrollbar.dragging .page-scrollbar-thumb{cursor:grabbing}
+@media(max-width:650px){.page-scrollbar{right:0;width:16px;top:8px;bottom:8px}.page-scrollbar-thumb{width:16px}.page-scrollbar-thumb:before{inset:0 6px}.page-scrollbar-thumb:hover:before,.page-scrollbar-thumb:focus-visible:before,.page-scrollbar.dragging .page-scrollbar-thumb:before{inset:0 5px}}
+@media(prefers-reduced-motion:reduce){.page-scrollbar-thumb:before{transition:none}}
 .news-track{scrollbar-width:none;-ms-overflow-style:none}
 .news-track::-webkit-scrollbar{display:none;width:0;height:0}
 .wordmark{display:inline-flex;flex-direction:column;align-items:center}

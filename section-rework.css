@@ -213,3 +213,8 @@ html{scroll-padding-top:clamp(58px,5.2vw,74px)}
 /* Arrow glyphs are drawn, not written: browser auto-translation rewrote "←" as a word. */
 .arrow-glyph{width:38%;height:38%;margin:auto;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .carousel-arrows button,.product-arrow{display:flex;align-items:center;justify-content:center;padding:0;line-height:0}
+
+/* Keep the quiet left-wall mark inside the existing mobile photo frame. */
+@media(max-width:650px){
+ .shops #store-image[src$="store-tourist.webp"]{object-position:25% center}
+}

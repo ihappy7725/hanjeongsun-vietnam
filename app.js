@@ -1,4 +1,5 @@
 import {installSmoothScroll} from './smooth-scroll.js';
+import {installOverlayScrollbar} from './overlay-scrollbar.js';
 import {journals} from './journal-data.js';
 import {products} from './collection-data.js';
 import {siteCopy} from './site-content.js';
@@ -102,7 +103,7 @@ let startX=null;$('.product-stage').addEventListener('touchstart',e=>startX=e.to
 $$('[data-region]').forEach(b=>b.addEventListener('pointerenter',()=>{region=b.dataset.region;renderRegion();}));
 const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
 const header=$('.site-header');const heroSection=$('.hero');
-function syncHeader(){if(!header||!heroSection)return;header.classList.toggle('lifted',(window.scrollY||0)>Math.max(0,(heroSection.offsetHeight||0)-(header.offsetHeight||0)*1.4));}
+function syncHeader(){if(!header||!heroSection)return;const heroHeight=heroSection.getBoundingClientRect?.().height??heroSection.offsetHeight??0;header.classList.toggle('lifted',(window.scrollY||0)>Math.max(0,heroHeight-(header.offsetHeight||0)*1.4));}
 addEventListener('scroll',syncHeader,{passive:true});addEventListener('resize',syncHeader);syncHeader();
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{entry.target.classList.toggle('visible',entry.isIntersecting);}),{threshold:.08,rootMargin:'0px 0px -20px 0px'});$$('.reveal').forEach(el=>observer.observe(el));
 const sceneObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('scene-visible');}),{threshold:.12});$$('[data-scene]').forEach(el=>sceneObserver.observe(el));
@@ -141,7 +142,9 @@ function updateScroll(timestamp){
  const now=Number.isFinite(timestamp)?timestamp:performance.now();
  const elapsed=lastFrameTime?Math.min(64,now-lastFrameTime):16.67;lastFrameTime=now;
  let settling=false;
- const galleryTop=$('.story-gallery').getBoundingClientRect().top;
+ const gallery=$('.story-gallery'),galleryRect=gallery.getBoundingClientRect();
+ const galleryTop=galleryRect.top;
+ const galleryScale=gallery.offsetWidth?galleryRect.width/gallery.offsetWidth:1;
  const seal=$('.brand-seal');
  if(seal){
   const target=reduce.matches?1:smootherstep(clamp((innerHeight*.92-galleryTop)/(innerHeight*.68)));
@@ -154,8 +157,8 @@ function updateScroll(timestamp){
  for(const [i,photo] of galleryPhotos.entries()){
   if(reduce.matches){photo.removeAttribute('style');motionStates.delete(photo);continue;}
   const r=photo.getBoundingClientRect();
-  const height=photo.offsetHeight||r.height;
-  const top=Number.isFinite(photo.offsetTop)?galleryTop+photo.offsetTop:r.top;
+  const height=photo.offsetHeight?photo.offsetHeight*galleryScale:r.height;
+  const top=Number.isFinite(photo.offsetTop)?galleryTop+photo.offsetTop*galleryScale:r.top;
   if(top+height< -180||top>innerHeight+180)continue;
   const profile=galleryTimings[i];
   const target=galleryFrame(top,height,innerHeight,i).reveal;
@@ -197,4 +200,5 @@ setLanguage(lang);
 installContact({copy,getLang:()=>lang});
 fetch('assets/maps.json').then(r=>{if(!r.ok)throw Error('Map asset unavailable');return r.json();}).then(m=>{$('#vietnam-outline')?.setAttribute('d',m.vietnam);$('#world-outline')?.setAttribute('d',m.world);}).catch(e=>console.error(e));
 
-installSmoothScroll();
+const pageScroll=installSmoothScroll();
+installOverlayScrollbar(pageScroll.stop);

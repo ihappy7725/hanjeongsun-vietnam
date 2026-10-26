@@ -1,4 +1,5 @@
 import {installSmoothScroll} from './smooth-scroll.js';
+import {installOverlayScrollbar} from './overlay-scrollbar.js';
 import {journals} from './journal-data.js';
 const $=s=>document.querySelector(s);
 const params=new URLSearchParams(location.search);
@@ -28,4 +29,5 @@ export function renderJournal(){
 document.addEventListener('click',e=>{const b=e.target.closest('[data-lang]');if(!b)return;lang=b.dataset.lang;try{localStorage.setItem('hanjungsun-language',lang);}catch{}const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url);renderJournal();});
 renderJournal();
 
-installSmoothScroll();
+const pageScroll=installSmoothScroll();
+installOverlayScrollbar(pageScroll.stop);

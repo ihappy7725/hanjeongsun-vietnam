@@ -17,7 +17,7 @@ const body=String.raw`
    await until("document.querySelector('.hero-photo>img').complete&&document.querySelector('.hero-photo>img').naturalWidth>0");
    const hero=await evaluate("(()=>{const i=document.querySelector('.hero-photo>img'),f=document.querySelector('.hero-photo').getBoundingClientRect();return {src:i.getAttribute('src'),full:f.height,screen:innerHeight,fit:getComputedStyle(i).objectFit,horizontalFraction:Math.min(1,f.width/(Math.max(f.width/i.naturalWidth,f.height/i.naturalHeight)*i.naturalWidth))}})()");
    assert.equal(hero.src,'assets/vietnam-four-hero-v3.webp');assert.ok(hero.horizontalFraction>.97,'All four hero cake columns stay in frame');checks+=2;
-   assert.ok(hero.full>=hero.screen*.94,'Hero photograph fills the first screen');checks++;
+   assert.ok(hero.full>=hero.screen*.94,'Hero background fills the first screen while the photograph is inset');checks++;
    if(width<=1000)assert.equal(hero.fit,'contain');checks++;
    await evaluate("document.querySelector('#home').scrollIntoView({behavior:'instant',block:'start'});new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))");
    const homeBox=await evaluate("(()=>{const r=document.querySelector('#home').getBoundingClientRect();return {x:0,y:scrollY+r.top,width:innerWidth,height:Math.ceil(r.height),scale:1}})()");
@@ -34,8 +34,14 @@ const body=String.raw`
    for(const i of gift){assert.equal(i.width,1536);assert.equal(i.fit,'contain');assert.ok(Math.abs(i.ratio-1.5)<.02);checks+=3;}
    const removed=await evaluate("({vision:!!document.querySelector('#vision'),world:!!document.querySelector('.world-map'),skip:!!document.querySelector('.intro-skip')})");
    assert.equal(removed.vision,false);assert.equal(removed.world,false);assert.equal(removed.skip,false);checks+=3;
-   for(const [name,selector] of [['gallery','.story-gallery'],['gifting','#gifting'],['brand','#brand']]){
+   for(const [name,selector] of [['gallery','.story-gallery'],['gifting','#gifting'],['brand','#brand'],['shops','#shops']]){
     await evaluate("document.querySelector('"+selector+"').scrollIntoView({behavior:'instant',block:'start'});new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))");
+    if(name==='shops'){
+     await until("document.querySelector('#store-image').complete&&document.querySelector('#store-image').naturalWidth>0");
+     const store=await evaluate("(()=>{const i=document.querySelector('#store-image');return {src:i.getAttribute('src'),width:i.naturalWidth,height:i.naturalHeight}})()");
+     assert.ok(store.src==='assets/store-tourist.webp'&&store.width===1376&&store.height===768,'Ben Song image keeps its reference path and size');checks++;
+     await delay(1500);
+    }
     const box=await evaluate("(()=>{const r=document.querySelector('"+selector+"').getBoundingClientRect();return {x:0,y:scrollY+r.top,width:innerWidth,height:Math.ceil(r.height),scale:1}})()");
     const {data}=await page.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true,clip:box});
     await writeFile(join(artifacts,'experience-'+name+'-'+width+'.png'),Buffer.from(data,'base64'));

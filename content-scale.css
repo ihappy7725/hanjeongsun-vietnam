@@ -1,0 +1,28 @@
+/* Scale the page content, while keeping full-width backgrounds and the header intact. */
+:root{--content-scale:.85}
+main,.footer,.article-footer{zoom:var(--content-scale)}
+.intro-mark{zoom:var(--content-scale)}
+
+/* Percentage-based layouts also need a narrower stage: zoom alone fills the viewport. */
+main .collage{width:85%;margin-inline:auto}
+main .news-track,main .news .section-heading{width:85%;margin-inline:auto}
+main #product-panel,main .collection-tabs{width:85%}
+main .gift-stage,main .brand-immersive .brand-content{width:85%;margin-inline:auto}
+main .shops .dark-content{width:85%;margin-inline:auto}
+main .contact-heading,main .contact-tabs,main .contact-panel{width:85%;margin-inline:auto}
+.footer-top,.footer-links,.footer-bottom{width:85%;margin-inline:auto}
+
+/* Keep the first chapter full-height; inset only its photograph, not the header. */
+.hero-photo{height:calc(100svh / var(--content-scale))}
+.hero-photo>img{position:absolute;left:7.5%;top:7.5%;width:85%;height:85%;object-fit:cover;object-position:center 58%}
+@media(max-width:1000px){.hero-photo>img{object-fit:contain;object-position:center}}
+.journal-page .article-hero{max-width:min(1320px,88vw)}
+.journal-page .article-heading,.journal-page .article-body,.journal-page .article-navigation{width:85%}
+.journal-page .article-secondary{width:57.8%}
+
+/* Keep mobile form entry readable without restoring the surrounding large layout. */
+@media(max-width:650px){
+ .contact-field input,.contact-field select,.contact-field textarea{font-size:calc(16px / var(--content-scale))}
+ .journal-page .article-hero{max-width:100vw}
+ .journal-page .article-secondary{width:73.1%}
+}
